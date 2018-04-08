@@ -15,11 +15,6 @@ namespace WeddingApp.Controllers
         {
             _context = context;
 
-            if (_context.RsvpItems.Count() == 0)
-            {
-                _context.RsvpItems.Add(new Rsvp { Name = "Item1", UniqueId = Guid.NewGuid() });
-                _context.SaveChanges();
-            }
         }
 
         [HttpGet]
