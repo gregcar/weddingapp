@@ -73,6 +73,7 @@ namespace WeddingApp.Controllers
             rsvp.KidsCount = item.KidsCount;
             rsvp.Email = item.Email;
             rsvp.Attending = item.Attending;
+            rsvp.UpdateDate = DateTime.UtcNow;
 
             if (item.PlusOne)
                 rsvp.PlusOneName = item.PlusOneName;
