@@ -23,7 +23,10 @@ namespace WeddingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<RsvpContext>(opt => opt.UseInMemoryDatabase("RsvpList"));
+            //services.AddDbContext<RsvpContext>(opt => opt.UseInMemoryDatabase("RsvpList"));
+            //var connection = Configuration["ConnectionStrings:WeddingDBConnectionString"];
+            var connection = Environment.GetEnvironmentVariable("ConnectionStrings:WeddingDBConnectionString", EnvironmentVariableTarget.Process);
+            services.AddDbContext<RsvpContext>(options => options.UseSqlServer(connection));
             services.AddMvc();
         }
 

@@ -256,3 +256,5 @@ ModelManifest.xml
 # don't let secrets into source
 secrets.config
 connectionstrings.config
+obj/Debug/netcoreapp2.0/WeddingApp.csproj.FileListAbsolute.txt
+bin/Debug/netcoreapp2.0/WeddingApp.dll
