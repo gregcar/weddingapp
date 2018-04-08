@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using WeddingApp.Models;
 
@@ -22,7 +20,7 @@ namespace WeddingApp.Migrations
 
             modelBuilder.Entity("WeddingApp.Models.Rsvp", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("Attending");
@@ -38,6 +36,8 @@ namespace WeddingApp.Migrations
                     b.Property<bool>("PlusOne");
 
                     b.Property<string>("PlusOneName");
+
+                    b.Property<Guid>("UniqueId");
 
                     b.HasKey("Id");
 
