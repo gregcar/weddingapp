@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeddingApp.Models
 {
@@ -7,16 +8,14 @@ namespace WeddingApp.Models
     public class Rsvp {
         [Key]
         [Required]
-        public int Id {get;set;}
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id {get;set;}
 
         [Required]
         public string Name {get;set;}
 
         [Required]
         public string Email {get;set;}
-
-        [Required]
-        public Guid UniqueId {get;set;}
 
         public Boolean Attending {get;set;}
 

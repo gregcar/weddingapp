@@ -15,7 +15,7 @@ namespace WeddingApp.Controllers
         {
             _context = context;
 
-        }
+        }   
 
         [HttpGet]
         public IEnumerable<Rsvp> GetAll()
@@ -29,7 +29,7 @@ namespace WeddingApp.Controllers
             Guid uniqueId = Guid.Empty;
             
             Guid.TryParse(id, out uniqueId);
-            var item = _context.RsvpItems.FirstOrDefault(t => t.UniqueId == uniqueId);
+            var item = _context.RsvpItems.FirstOrDefault(t => t.Id == uniqueId);
             if (item == null)
             {
                 return NotFound();
@@ -48,7 +48,7 @@ namespace WeddingApp.Controllers
             _context.RsvpItems.Add(item);
             _context.SaveChanges();
 
-            return CreatedAtRoute("GetRsvp", new { id = item.UniqueId.ToString() }, item);
+            return CreatedAtRoute("GetRsvp", new { id = item.Id.ToString() }, item);
         }
 
         [HttpPut("{id}")]
@@ -58,12 +58,12 @@ namespace WeddingApp.Controllers
             
             Guid.TryParse(id, out uniqueId);
 
-            if (item == null || item.UniqueId != uniqueId)
+            if (item == null || item.Id != uniqueId)
             {
                 return BadRequest();
             }
 
-            var rsvp = _context.RsvpItems.FirstOrDefault(t => t.UniqueId == uniqueId);
+            var rsvp = _context.RsvpItems.FirstOrDefault(t => t.Id == uniqueId);
             if (rsvp == null)
             {
                 return NotFound();
