@@ -11,9 +11,10 @@ using WeddingApp.Models;
 namespace WeddingApp.Migrations
 {
     [DbContext(typeof(RsvpContext))]
-    partial class RsvpContextModelSnapshot : ModelSnapshot
+    [Migration("20180408231531_date-monitoring")]
+    partial class datemonitoring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
