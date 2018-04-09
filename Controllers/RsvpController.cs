@@ -71,7 +71,7 @@ namespace WeddingApp.Controllers
             rsvp.PlusOne = item.PlusOne;
             rsvp.KidsCount = item.KidsCount;
             rsvp.Email = item.Email;
-            rsvp.Attending = item.Attending;
+            rsvp.Status = item.Status;
             rsvp.UpdateDate = DateTime.UtcNow;
 
             if (item.PlusOne)

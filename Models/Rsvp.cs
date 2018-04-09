@@ -17,9 +17,20 @@ namespace WeddingApp.Models
         [Required]
         public string Email {get;set;}
 
-        public Boolean Attending {get;set;}
+        [Required]
+        public int StatusId {get;set;}
 
-        public Boolean PlusOne {get;set;}
+        [NotMapped]
+        public RsvpStatus Status {
+            get {
+                return (RsvpStatus)StatusId;
+            }
+            set {
+                StatusId = (int)value;
+            }
+        }
+
+        public bool PlusOne {get;set;}
 
         public string PlusOneName {get;set;}
 
@@ -28,6 +39,18 @@ namespace WeddingApp.Models
         public DateTime InsertDate {get; set;}
         public DateTime UpdateDate {get; set;}
 
+        [NotMapped]
+        public bool Attending 
+        {
+            get {
+                if (Status == RsvpStatus.Yes || Status == RsvpStatus.YesPlusOne)
+                    return true;
+
+                return false;
+            }
+        }
+
+        [NotMapped]
         public int AdultsCount
         {
             get {
@@ -58,4 +81,11 @@ namespace WeddingApp.Models
             }
         }
     }
+
+    public enum RsvpStatus {
+        Yes = 1,
+        No = 3,
+        YesPlusOne = 2,
+        Unknown = 0
+    } 
 }
