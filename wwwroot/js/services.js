@@ -1,7 +1,7 @@
 
 
 var services = function()  {  
-    var base_URL = "https://carnieweddingfctns.azurewebsites.net/api/";
+    var base_URL = "/api/";
 
     var retrieveRSVPValueForGuestID = function (guestID, callback){
         $.ajax({
