@@ -34,7 +34,7 @@ namespace WeddingApp.Controllers
             {
                 return NotFound();
             }
-            return new ObjectResult(item);
+            return new JsonResult(item);
         } 
 
         //[HttpPost]

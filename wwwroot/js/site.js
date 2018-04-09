@@ -24,7 +24,7 @@
         $('#saveRSVPButton').prop("disabled",true);
 			
 		//todo get the guid from the URL
-		var guestID = 123;
+		var guestID = getParameterByName("c", null);
 		if (guestID == "")
 			{
 				utils.handleError("Guest ID is empty");
@@ -51,7 +51,7 @@
 				numberOfKids: $("#numberOfKids").val(),
 				guestName: model.guestName,
 			}
-				
+
 			services.saveRSVP(dto, guestID, function(){
 				model.initFromDto(dto);
                 updateMainView(model);
@@ -65,4 +65,14 @@
 	initPage();
 
 });
+
+function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 	

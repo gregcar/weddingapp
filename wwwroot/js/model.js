@@ -55,9 +55,10 @@ var model = {
         return rsvpStatusDescription;
     },
     initFromDto: function(dto){
-        this.rsvpStatus = dto.rsvpStatus;
+        this.guestID = dto.id;
+        this.rsvpStatus = dto.status;
         this.plusOneName = dto.plusOneName;
-        this.numberOfKids = dto.numberOfKids;
-        this.guestName = dto.guestName;			
+        this.numberOfKids = dto.kidsCount;
+        this.guestName = dto.name;			
     }
 }

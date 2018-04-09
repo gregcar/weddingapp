@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace WeddingApp.Models
 {
@@ -21,13 +23,10 @@ namespace WeddingApp.Models
         public int StatusId {get;set;}
 
         [NotMapped]
+        [JsonConverter(typeof(StringEnumConverter))]
         public RsvpStatus Status {
-            get {
-                return (RsvpStatus)StatusId;
-            }
-            set {
-                StatusId = (int)value;
-            }
+            get { return (RsvpStatus)StatusId; }
+            set { StatusId = (int)value; }
         }
 
         public bool PlusOne {get;set;}
@@ -83,6 +82,7 @@ namespace WeddingApp.Models
     }
 
     public enum RsvpStatus {
+        
         Yes = 1,
         No = 3,
         YesPlusOne = 2,
