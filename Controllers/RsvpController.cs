@@ -7,15 +7,15 @@ using WeddingApp.Models;
 namespace WeddingApp.Controllers
 {
     [Route("api/[controller]")]
-    public class RsvpController : Controller
+    public class RsvpsController : Controller
     {
         private readonly RsvpContext _context;
 
-        public RsvpController(RsvpContext context)
+        public RsvpsController(RsvpContext context)
         {
             _context = context;
 
-        }   
+        }
 
         [HttpGet]
         public IEnumerable<Rsvp> GetAll()
@@ -24,7 +24,7 @@ namespace WeddingApp.Controllers
         }
 
         [HttpGet("{id}", Name = "GetRsvp")]
-        public IActionResult GetByUniqueId(string id)
+        public IActionResult GetById(string id)
         {
             Guid uniqueId = Guid.Empty;
             
@@ -37,19 +37,18 @@ namespace WeddingApp.Controllers
             return new ObjectResult(item);
         } 
 
-        [HttpPost]
-        public IActionResult Create([FromBody] Rsvp item)
-        {
-            if (item == null)
-            {
-                return BadRequest();
-            }
+        //[HttpPost]
+        //public IActionResult Create([FromBody] Rsvp item)
+        //{
+        //    if (item == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    _context.RsvpItems.Add(item);
+        //    _context.SaveChanges();
 
-            _context.RsvpItems.Add(item);
-            _context.SaveChanges();
-
-            return CreatedAtRoute("GetRsvp", new { id = item.Id.ToString() }, item);
-        }
+          //  return CreatedAtRoute("GetRsvp", new { id = item.Id.ToString() }, item);
+        //}
 
         [HttpPut("{id}")]
         public IActionResult Update(string id, [FromBody] Rsvp item)
