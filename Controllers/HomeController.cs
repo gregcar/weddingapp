@@ -22,10 +22,9 @@ namespace WeddingApp.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Instructions()
         {
-            ViewData["Message"] = "Your contact page.";
-
+            
             return View();
         }
 

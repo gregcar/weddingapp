@@ -10,26 +10,28 @@
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+#status.done{
+	background-color: green;
+
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+*{
+	font-family: Georgia, serif	
+
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+
+.indent {
+	padding-left:30px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.large {
+	font-size: 18pt;
+
 }
+
+.medium {
+	font-size: 14pt;
+
+}
+
