@@ -3,7 +3,7 @@ var utils = function() {
         if (console && console.log) 
         {
             console.log(error);
-            alert(error);
+            $("#errorModal").modal();
         }
     }
 
