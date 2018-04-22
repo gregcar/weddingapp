@@ -1,8 +1,14 @@
 var utils = function() {
-    var handleError = function (error) {
+    var handleError = function (error, description) {
+        if (description == null || description==undefined)
+        {
+            description = "";
+        }
         if (console && console.log) 
         {
             console.log(error);
+            $("#errorModal p.errorSummary").html(error);
+            $("#errorModal p.errorDescription").html(description);
             $("#errorModal").modal();
         }
     }

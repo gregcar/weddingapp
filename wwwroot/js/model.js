@@ -50,7 +50,7 @@ var model = {
                 rsvpStatusDescription='Not responded yet!! Seriously! Are you coming?';
                 break;
             default:
-                utils.handleError("unexpected RSVP value " + this.rsvpStatus);			
+                utils.handleError("unexpected RSVP value " + this.rsvpStatus, "Something is wrong please email us.");			
         }
         return rsvpStatusDescription;
     },

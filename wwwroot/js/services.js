@@ -12,7 +12,7 @@ var services = function()  {
         }).success(function(dto) {
             callback(dto);
         }).fail(function( jqXHR, textStatus ){
-            utils.handleError(textStatus);
+            utils.handleError(textStatus, "We could not find your invitation. Please try clicking the link in the email we sent you.");
         })	
     };
     var saveRSVP = function (dto, guestID, callback) {
@@ -26,7 +26,7 @@ var services = function()  {
             callback(); 
             
         }).fail(function( jqXHR, textStatus ){
-            utils.handleError(textStatus);
+            utils.handleError(textStatus, "Error saving your RSVP. Please try clicking the link from the email we sent you and try again.");
         });
     };
     return {

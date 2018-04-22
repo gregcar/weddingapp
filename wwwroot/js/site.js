@@ -44,7 +44,7 @@
 		var guestID = utils.getParameterByName("c", null);
 		if (guestID == null || guestID == "")
 			{
-				utils.handleError("Guest ID is empty");
+				utils.handleError("Error loading the page.", "Please try clicking the link from the email we sent you.");
 				return;
 			}
 		//get the rsvp value for the guest and update the page
