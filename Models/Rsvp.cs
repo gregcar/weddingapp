@@ -28,9 +28,6 @@ namespace WeddingApp.Models
             get { return (RsvpStatus)StatusId; }
             set { StatusId = (int)value; }
         }
-
-        public bool PlusOne {get;set;}
-
         public string PlusOneName {get;set;}
 
         public int KidsCount {get;set;}
@@ -49,37 +46,37 @@ namespace WeddingApp.Models
             }
         }
 
-        [NotMapped]
-        public int AdultsCount
-        {
-            get {
-                if (Attending)
-                {
-                    return PlusOne ? 2 : 1;
-                }
+    //     [NotMapped]
+    //     public int AdultsCount
+    //     {
+    //         get {
+    //             if (Attending)
+    //             {
+    //                 return PlusOne ? 2 : 1;
+    //             }
 
-                return 0;
-            }
-        }
+    //             return 0;
+    //         }
+    //     }
 
-        public int TotalAttending 
-        {
-            get 
-            {
-                if (Attending)
-                {
-                    var total = 1 + KidsCount;
+    //     public int TotalAttending 
+    //     {
+    //         get 
+    //         {
+    //             if (Attending)
+    //             {
+    //                 var total = 1 + KidsCount;
 
-                    if (PlusOne)
-                        total += 1;
+    //                 if (PlusOne)
+    //                     total += 1;
 
-                    return total;
-                }
+    //                 return total;
+    //             }
 
-                return 0;
-            }
-        }
-    }
+    //             return 0;
+    //         }
+    //     }
+     }
 
     public enum RsvpStatus {
         

@@ -8,3 +8,13 @@ C:\code\WeddingApp\bin\Debug\netcoreapp2.0\WeddingApp.runtimeconfig.dev.json
 C:\code\WeddingApp\bin\Debug\netcoreapp2.0\WeddingApp.pdb
 C:\code\WeddingApp\obj\Debug\netcoreapp2.0\WeddingApp.dll
 C:\code\WeddingApp\obj\Debug\netcoreapp2.0\WeddingApp.pdb
+C:\Users\valeh\source\repos\weddingapp\obj\Debug\netcoreapp2.0\WeddingApp.csproj.CoreCompileInputs.cache
+C:\Users\valeh\source\repos\weddingapp\obj\Debug\netcoreapp2.0\WeddingApp.AssemblyInfoInputs.cache
+C:\Users\valeh\source\repos\weddingapp\obj\Debug\netcoreapp2.0\WeddingApp.AssemblyInfo.cs
+C:\Users\valeh\source\repos\weddingapp\bin\Debug\netcoreapp2.0\WeddingApp.deps.json
+C:\Users\valeh\source\repos\weddingapp\bin\Debug\netcoreapp2.0\WeddingApp.runtimeconfig.json
+C:\Users\valeh\source\repos\weddingapp\bin\Debug\netcoreapp2.0\WeddingApp.runtimeconfig.dev.json
+C:\Users\valeh\source\repos\weddingapp\bin\Debug\netcoreapp2.0\WeddingApp.dll
+C:\Users\valeh\source\repos\weddingapp\bin\Debug\netcoreapp2.0\WeddingApp.pdb
+C:\Users\valeh\source\repos\weddingapp\obj\Debug\netcoreapp2.0\WeddingApp.dll
+C:\Users\valeh\source\repos\weddingapp\obj\Debug\netcoreapp2.0\WeddingApp.pdb

@@ -67,14 +67,12 @@ namespace WeddingApp.Controllers
             {
                 return NotFound();
             }
-            rsvp.Name = item.Name;
-            rsvp.PlusOne = item.PlusOne;
+
             rsvp.KidsCount = item.KidsCount;
-            rsvp.Email = item.Email;
             rsvp.Status = item.Status;
             rsvp.UpdateDate = DateTime.UtcNow;
 
-            if (item.PlusOne)
+            if (item.Status == RsvpStatus.YesPlusOne)
                 rsvp.PlusOneName = item.PlusOneName;
             else 
                 rsvp.PlusOneName = string.Empty;

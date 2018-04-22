@@ -50,7 +50,7 @@ var model = {
                 rsvpStatusDescription='You have not responded yet!';
                 break;
             default:
-                handleError("unexpected RSVP value " + this.rsvpStatus);			
+                utils.handleError("unexpected RSVP value " + this.rsvpStatus);			
         }
         return rsvpStatusDescription;
     },

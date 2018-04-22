@@ -12,7 +12,9 @@
         //set rsvp descriptions
         $('#plusOneDescription').html(model.getPlusOneDescription());
 		$('#rsvpStatusDescription').html(model.getRVPStatusDescription());
-        $('#numberOfKidsDescription').html(model.getNumberOfKidsDescription());
+		$('#numberOfKidsDescription').html(model.getNumberOfKidsDescription());
+
+	
         
         //initialize dialog
         rsvpDialog.initFromModel(model);
@@ -24,10 +26,11 @@
         $('#saveRSVPButton').prop("disabled",true);
 			
 		//todo get the guid from the URL
-		var guestID = getParameterByName("c", null);
-		if (guestID == "")
+		var guestID = utils.getParameterByName("c", null);
+		if (guestID == null || guestID == "")
 			{
 				utils.handleError("Guest ID is empty");
+				return;
 			}
 		//get the rsvp value for the guest and update the page
 		services.retrieveRSVPValueForGuestID(guestID, function(dto) {
@@ -46,10 +49,11 @@
 			}
 						
 			var dto = {
-				rsvpStatus: rsvpStatus,
+				status: rsvpStatus,					
 				plusOneName:  $("#plusOneName").val(),
-				numberOfKids: $("#numberOfKids").val(),
+				kidsCount: $("#numberOfKids").val(), 
 				guestName: model.guestName,
+				id: model.guestID
 			}
 
 			services.saveRSVP(dto, guestID, function(){
@@ -66,13 +70,5 @@
 
 });
 
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-		results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
+
 	

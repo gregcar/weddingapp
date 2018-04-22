@@ -258,3 +258,7 @@ secrets.config
 connectionstrings.config
 obj/Debug/netcoreapp2.0/WeddingApp.csproj.FileListAbsolute.txt
 bin/Debug/netcoreapp2.0/WeddingApp.dll
+obj/WeddingApp.csproj.nuget.g.targets
+bin/Debug/netcoreapp2.0/WeddingApp.dll
+obj/WeddingApp.csproj.nuget.cache
+obj/WeddingApp.csproj.nuget.g.props

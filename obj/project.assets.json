@@ -7561,7 +7561,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "X6dDYuDRli+u1KPFuw+Hv6oWFlGHlmxID5qvKXc4okk2u0nPJQXEUKpSXOiWhj3Gyqz8XcXP77uBwoo0DQNA1A==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -9851,7 +9851,7 @@
       ]
     },
     "System.Net.Security/4.3.0": {
-      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
+      "sha512": "eA5lbSnL05pQbLGax4RXfwa1Eig/8iUb/+usDQjug6qsTKhoKbdaOFt6AECe0CdmdIxYgp17vMzYJuzIH81yZg==",
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
@@ -12538,27 +12538,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gregcar\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\valeh\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\WeddingApp\\WeddingApp.csproj",
+      "projectUniqueName": "C:\\Users\\valeh\\source\\repos\\weddingapp\\WeddingApp.csproj",
       "projectName": "WeddingApp",
-      "projectPath": "C:\\code\\WeddingApp\\WeddingApp.csproj",
-      "packagesPath": "C:\\Users\\gregcar\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\WeddingApp\\obj\\",
+      "projectPath": "C:\\Users\\valeh\\source\\repos\\weddingapp\\WeddingApp.csproj",
+      "packagesPath": "C:\\Users\\valeh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valeh\\source\\repos\\weddingapp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gregcar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\valeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

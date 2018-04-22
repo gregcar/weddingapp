@@ -27,8 +27,12 @@ namespace WeddingApp
             //var connection = Configuration["ConnectionStrings:WeddingDBConnectionString"];
             var connection = Environment.GetEnvironmentVariable("ConnectionStrings:WeddingDBConnectionString", EnvironmentVariableTarget.Process);
             services.AddDbContext<RsvpContext>(options => options.UseSqlServer(connection));
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+            });
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
