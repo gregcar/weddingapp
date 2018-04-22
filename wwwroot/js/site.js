@@ -14,7 +14,22 @@
 		$('#rsvpStatusDescription').html(model.getRVPStatusDescription());
 		$('#numberOfKidsDescription').html(model.getNumberOfKidsDescription());
 
-	
+		var rsvpResponseBox = $("#RSVP ul");
+		if (model.rsvpStatus == "No") {
+			rsvpResponseBox.removeClass("bg-warning");
+			rsvpResponseBox.addClass("bg-danger");
+			rsvpResponseBox.removeClass("bg-success");
+		}
+		else if (model.rsvpStatus == "Unknown"){
+			rsvpResponseBox.removeClass("bg-danger");
+			rsvpResponseBox.addClass("bg-warning");
+			rsvpResponseBox.removeClass("bg-success");
+		}
+		else {
+			rsvpResponseBox.removeClass("bg-danger");
+			rsvpResponseBox.removeClass("bg-warning");
+			rsvpResponseBox.addClass("bg-success");
+		}
         
         //initialize dialog
         rsvpDialog.initFromModel(model);

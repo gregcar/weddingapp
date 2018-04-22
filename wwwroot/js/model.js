@@ -5,7 +5,7 @@ var model = {
     numberOfKids : 0,
     plusOneName : "",
     getNumberOfKidsDescription: function() {
-        var numberOfKidsDescription = "";
+        var numberOfKidsDescription = "~~";
         if (this.rsvpStatus == "Yes" || this.rsvpStatus == "YesPlusOne")
         {
             if (this.numberOfKids == 1) {
@@ -19,24 +19,24 @@ var model = {
                 numberOfKidsDescription = "You are not bringing any kids.";
             }
         }
-        return numberOfKidsDescription;s
+        return numberOfKidsDescription;
     },
     getPlusOneDescription: function() {
-        var plusOneDescription = "";
+        var plusOneDescription = "~~";
         if (this.rsvpStatus == "YesPlusOne")
         {
             if (this.plusOneName != "") {
-                plusOneDescription = "You are bringing a guest (" + this.plusOneName + ").";
+                plusOneDescription = "You are bringing a precious guest (" + this.plusOneName + ").";
             }
             else
             {
-                plusOneDescription = "You are bringing a guest and you have not told us the name yet.";
+                plusOneDescription = "You are bringing a guest but you have not told us the name yet.";
             }
         }
         return plusOneDescription;
     },
     getRVPStatusDescription: function() {
-        var rsvpStatusDescription = "";		
+        var rsvpStatusDescription = "~~";		
         switch(this.rsvpStatus) 
         {
             case "Yes": 
@@ -44,10 +44,10 @@ var model = {
                 rsvpStatusDescription= 'Hurray! You have said YES. ';
                 break;
             case "No": 
-                rsvpStatusDescription= 'You have told us you are not coming.';
+                rsvpStatusDescription= 'Boooo.... You are not coming! :(';
                 break;
             case "Unknown": 
-                rsvpStatusDescription='You have not responded yet!';
+                rsvpStatusDescription='Not responded yet!! Seriously! Are you coming?';
                 break;
             default:
                 utils.handleError("unexpected RSVP value " + this.rsvpStatus);			

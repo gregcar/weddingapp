@@ -2,96 +2,159 @@
     ViewData["Title"] = "Wedding Invitation";
 }
 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-xs-push-3 col-sm-4 col-sm-push-8">
+            <img src="~/images/GregAndValeh.JPG" class="img-circle img-responsive" style="transform: scaleY(-1);-webkit-transform: scaleY(-1); ">
+        </div>
 
-<div id="invitation">
-    <h1>
-        Greetings <span id="guestName"> </span>!
-    </h1>
-    <p>
-        Please join us for a celebration of love, friendship, and family.
-    </p>
-    <p>
-        The location is on a little hill, south of Stampede grounds, in a small cafe surrounded by the first garden created in Calgary! The ceremony is going to be in a small garden next to the cafe called Nana's Garden, starting at 5:00 PM. If you can, bring a lawn chair to sit on and enjoy the beauty of the garden. There are a few little gardens surrounding the cafe. For instructions about where to park and how to find the exact location of the ceremony please see here. The ceremony will be followed up by a cocktails and a cozy dinner.
-        Also, don't worry about formal attire. Ladies, bring a pair of comfortable shoes to explore the garden and play lawn games.
-    </p>
-    <p>
-        We look forward to having you,
-    </p>
-    <p>
-   - Greg and Valeh     
-   </p>
+        <div class="col-xs-12 col-xs-push-0 col-sm-8 col-sm-pull-4">
+            <h1>
+                Greetings <span id="guestName"> </span>!
+            </h1>
+            <p>
+                Please join us for a celebration of love, friendship, and family.
+            </p>
+            <p>
+                The location is on a little hill, south of Stampede grounds, in a small cafe surrounded by the first garden created in Calgary! The ceremony is going to be in a small garden next to the cafe called Nana's Garden, starting at 5:00 PM. If you can, bring a lawn chair to sit on and enjoy the beauty of the garden. There are a few little gardens surrounding the cafe. For instructions about where to park and how to find the exact location of the ceremony please see here. The ceremony will be followed up by a cocktails and a cozy dinner.
+                Also, don't worry about formal attire. Ladies, bring a pair of comfortable shoes to explore the garden and play lawn games.
+            </p>
+            <p>
+                We look forward to having you,
+            </p>
+            <p>
+            - Greg and Valeh     
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="RSVP" class="col-xs-12 col-md-6">
+            <div class="well">
 
-   <img src="~/images/GregAndValeh.JPG" width="30%" class="img-circle pull-right" style="transform: scaleY(-1);-webkit-transform: scaleY(-1); ">
-        <ul>
-            <li>Readers garden cafe </li>
-            <li>311 25 Ave SE, Calgary, AB T2G 5V1</li>
-            <li>on August 11th, 4:30 PM </li>
-        </ul>
-</div>
+                <h2>
+                    Will you be joining us?
+                </h2>
 
-<h3>
-    Will you be joining us?
-</h3>
-<div id="RSVP" class="indent">
-    <div> 
-        <p>
-            <div id="rsvpStatusDescription" class="medium"> loading ...</div>
-            <div id="plusOneDescription" class="medium"> loading ...</div> 
-            <div id="numberOfKidsDescription" class="medium"> loading ...</div>
-        </p>
-        <p>
-            <button id="openChangeRSVPDialogButton" data-toggle="modal" data-target="#rsvpUdateDialog" type="button" class="btn">Change RSVP</button>
-        </p>    
-</div>
+                 
+                <button class="btn btn-primary pull-right btn-block"  id="openChangeRSVPDialogButton" data-toggle="modal" data-target="#rsvpUdateDialog" type="button" class="btn">Change RSVP</button>
+                <ul>
+                    <li id="rsvpStatusDescription"> loading ...</li>
+                    <li id="plusOneDescription"> loading ...</li> 
+                    <li id="numberOfKidsDescription"> loading ...</li>
+                </ul>                
+            </div>
+        </div>
 
+
+        <div class="col-xs-12 col-md-6">
+            <div class="well lead">
+                <h2>
+                    When and Where?
+                </h2>
+                Readers Rock Garden Cafe, <br/>
+                311 25 Ave SE, Calgary, AB T2G 5V1<br/><br/>
+                August 11th, 4:30 PM 
+            </div>
+        </div>
+    </div>
+    <div class = "well">
+        <div class="row">
+            <div>
+                <h1>
+                    Instructions
+                </h1>
+            </div>
+            
+            <div class="col-md-6 col-md-push-6">
+                <span>
+                    <img src="~/images/Map.png" class="img-rounded img-responsive">
+                </span>
+            </div>
+            
+            <div class="col-md-6 col-md-pull-6">
+                <h2> 1- Getting there </h2>
+                The location is                
+                <ul>
+                        <li>Readers garden cafe </li>
+                        <li>311 25 Ave SE, Calgary, AB T2G 5V1</li>
+                </ul>
+                <p class='NumberedItem'> 
+                    The location is accessibe by car but the parking lot is down the hill: If you are driving please park your car at the parking lot (Number 1). If you are taking a cab, the cab can drive all the way up.
+                <p>
+
+                <h2> 2- The ceremony </h2>
+                <p class='NumberedItem'>
+                    The ceremony will be held in a little garden to the <b>side of the cafe</b> called Nana's garden (Number 2)- see pictures below. It will begin promptly at 5:00 PM.
+                    <br/> 
+                    You will need to do a little bit of exploring through the path to get there. 
+                    <br/>
+                    <i>Please note that this is NOT the big lawn in front of the cafe. That lawn was already reserved so we got the smaller zosier one in the bush!</i>
+                </p>
+
+                <h2> 3- Dinner and cocktails</h2>
+                <p class='NumberedItem'>
+                    After the ceremony there will be cocktails and dinner in the cafe (Number 3).
+                    Please email us any dietary restrictions you have.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <span class="col-md-6">
+                    <div class="caption">
+                        Picture of ceremony location: Nana's Garden
+                    </div>
+                    <img src="~/images/RRG_Nanas_Garden_01.JPG" class="img-rounded img-responsive">
+                </span>
+            </div>
+        </div> 
+    </div>
 
 <!-- The Modal -->
 
     <div class="modal fade" id="rsvpUdateDialog" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">RSVP Update</h4>
-        </div>
-        <div class="modal-body">
-            <p>Will you be coming to our wedding?</p>
-            <div class="indent">
-                    <div class="radio">
-                        <label><input type="radio" name="rsvp-value" id="rsvpValueYes" value="Yes"> Yes</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="rsvp-value" id="rsvpValueYesPlusOne" value="YesPlusOne"> Yes and I will bring a guest (plus one)</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="rsvp-value"  id="rsvpValueNo" value="No"> No</label>
-                    </div>
-            <div>
-            
-            <div class="form-group">
-                <label for="plusOneName">Great! What is the name of you plus one?</label>
-                <input id="plusOneName" class="form-control" type="text"/>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">RSVP Update</h4>
             </div>
-
-            <div class="form-group">
-                <label for="numberOfKids">How many kids are you bringing?</label>
-                <select class="form-control" id="numberOfKids">
-                    <option selected="selected" value="0">None</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value ="4">4</option>
-                </select>
+            <div class="modal-body">
+                <p>Will you be coming to our wedding?</p>
+                <div class="indent">
+                        <div class="radio">
+                            <label><input type="radio" name="rsvp-value" id="rsvpValueYes" value="Yes"> Yes</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="rsvp-value" id="rsvpValueYesPlusOne" value="YesPlusOne"> Yes and I will bring a guest (plus one)</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="rsvp-value"  id="rsvpValueNo" value="No"> No</label>
+                        </div>
+                <div>
+                
+                <div class="form-group" id="plusOneGroup">
+                    <label for="plusOneName">Great! What is the name of you plus one?</label>
+                    <input id="plusOneName" class="form-control" type="text"/>
                 </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveRSVPButton">Save changes</button>
-        </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+
+                <div class="form-group" id="numberOfKidsGroup">
+                    <label for="numberOfKids">How many kids are you bringing?</label>
+                    <select class="form-control" id="numberOfKids">
+                        <option selected="selected" value="0">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value ="4">4</option>
+                    </select>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveRSVPButton">Save changes</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    
-    </div>
 </div>

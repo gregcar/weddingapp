@@ -17,8 +17,8 @@ var rsvpDialog = function() {
 	};
 
 	var resetEnabledInputs = function()
-	{
-		var value = $("[name=rsvp-value]:checked").val();
+	{ 
+		var value = $("input[name='rsvp-value']:checked").val();
 		if (value == "No") {
 			$("#plusOneName" ).prop( "disabled", true );
 			$("#plusOneName").val("");
