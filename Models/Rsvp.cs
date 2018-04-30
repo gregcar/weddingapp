@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
@@ -6,8 +7,9 @@ using Newtonsoft.Json.Converters;
 
 namespace WeddingApp.Models
 {
-
     public class Rsvp {
+        private List<Rsvp> _familyMembers = null;
+
         [Key]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,10 +19,16 @@ namespace WeddingApp.Models
         public string Name {get;set;}
 
         [Required]
+        public string FullName {get;set;}
+
+        [Required]
         public string Email {get;set;}
 
         [Required]
         public int StatusId {get;set;}
+
+        [Required]
+        public int FamilyId {get;set;}
 
         [NotMapped]
         [JsonConverter(typeof(StringEnumConverter))]
@@ -46,36 +54,16 @@ namespace WeddingApp.Models
             }
         }
 
-    //     [NotMapped]
-    //     public int AdultsCount
-    //     {
-    //         get {
-    //             if (Attending)
-    //             {
-    //                 return PlusOne ? 2 : 1;
-    //             }
-
-    //             return 0;
-    //         }
-    //     }
-
-    //     public int TotalAttending 
-    //     {
-    //         get 
-    //         {
-    //             if (Attending)
-    //             {
-    //                 var total = 1 + KidsCount;
-
-    //                 if (PlusOne)
-    //                     total += 1;
-
-    //                 return total;
-    //             }
-
-    //             return 0;
-    //         }
-    //     }
+        [NotMapped]
+        public List<Rsvp> FamilyMembers
+        {
+            get {
+                return _familyMembers;
+            }
+            set {
+                _familyMembers = value;
+            }
+        }
      }
 
     public enum RsvpStatus {

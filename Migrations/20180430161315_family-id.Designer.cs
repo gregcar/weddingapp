@@ -11,9 +11,10 @@ using WeddingApp.Models;
 namespace WeddingApp.Migrations
 {
     [DbContext(typeof(RsvpContext))]
-    partial class RsvpContextModelSnapshot : ModelSnapshot
+    [Migration("20180430161315_family-id")]
+    partial class familyid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +30,6 @@ namespace WeddingApp.Migrations
                         .IsRequired();
 
                     b.Property<int>("FamilyId");
-
-                    b.Property<string>("FullName")
-                        .IsRequired();
 
                     b.Property<DateTime>("InsertDate");
 

@@ -17,11 +17,11 @@ namespace WeddingApp.Controllers
 
         }
 
-        [HttpGet]
-        public IEnumerable<Rsvp> GetAll()
-        {
-            return _context.RsvpItems.ToList();
-        }
+        //[HttpGet]
+        //public IEnumerable<Rsvp> GetAll()
+        //{
+        //    return _context.RsvpItems.ToList();
+        //}
 
         [HttpGet("{id}", Name = "GetRsvp")]
         public IActionResult GetById(string id)
@@ -29,7 +29,11 @@ namespace WeddingApp.Controllers
             Guid uniqueId = Guid.Empty;
             
             Guid.TryParse(id, out uniqueId);
-            var item = _context.RsvpItems.FirstOrDefault(t => t.Id == uniqueId);
+            var item = _context.RsvpItems.FirstOrDefault(r => r.Id == uniqueId);
+            if (item.FamilyId > 0)
+            {
+                item.FamilyMembers = _context.RsvpItems.Where(r => r.FamilyId == item.FamilyId && r.Id != item.Id).ToList();
+            }
             if (item == null)
             {
                 return NotFound();
