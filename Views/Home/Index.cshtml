@@ -10,7 +10,7 @@
 
         <div class="col-xs-12 col-xs-push-0 col-sm-8 col-sm-pull-4 invitation">
             <h1>
-                Greetings <span id="guestName"> </span>!
+                Greetings <span id="helloDisplay"> </span>,
             </h1>
             <p>
                 Please join us for a celebration of love, friendship, and family at our wedding.
@@ -126,13 +126,19 @@
                 <p>Will you be coming to our wedding?</p>
                 <div class="indent">
                         <div class="radio">
-                            <label><input type="radio" name="rsvp-value" id="rsvpValueYes" value="Yes"> Yes</label>
+                            <label><input type="radio" name="rsvp-value" id="rsvpValueGuestYesOnly" value="GuestYesOnly"> Only <span name="guestName">  </span> will attend.</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="rsvp-value" id="rsvpValueFamilyMemberYesOnly" value="FamilyMemberYesOnly"> Only <span name="familyMemberName"> </span> will attend.</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="rsvp-value" id="rsvpValueBothYes" value="BothYes"> We will both attend</label>
                         </div>
                         <div class="radio">
                             <label><input type="radio" name="rsvp-value" id="rsvpValueYesPlusOne" value="YesPlusOne"> Yes and I will bring a guest (plus one)</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="rsvp-value"  id="rsvpValueNo" value="No"> No</label>
+                            <label><input type="radio" name="rsvp-value"  id="rsvpValueNo" value="No"> Unfortunately we cannot make it</label>
                         </div>
                 <div>
                 

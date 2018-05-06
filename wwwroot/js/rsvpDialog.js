@@ -3,11 +3,24 @@ var rsvpDialog = function() {
 
 	var initFromModel= function (model) {
 		if (model.rsvpStatus != "Unknown" )
-		{	
+		{
 			$("#rsvpValue"+model.rsvpStatus).prop("checked",true);
 		}
+
+		
 		$("#numberOfKids").val(model.numberOfKids);
-		$("#plusOneName").val(model.plusOneName);	
+		$("[name=guestName]").html(model.guestName);
+
+		if (model.familyMemberName !="") {  
+			$("[name=familyMemberName]").html(model.familyMemberName);
+			$("#rsvpValueYesPlusOne").parent().hide(); 
+			$("#plusOneGroup").hide();
+		} else {
+			$("#plusOneName").val(model.plusOneName);	
+			$("#rsvpValueFamilyMemberYesOnly").parent().hide();
+			$("#rsvpValueBothYes").parent().hide(); 
+			
+		}
 		resetEnabledInputs();	 
 	};	
 

@@ -81,7 +81,18 @@ namespace WeddingApp.Controllers
             else 
                 rsvp.PlusOneName = string.Empty;
 
+            if (item.FamilyMembers != null ){
+                    var familyMemberRsvp = _context.RsvpItems.FirstOrDefault(t => item.FamilyMembers[0].Id == t.Id);
+                    if (familyMemberRsvp == null)
+                    {
+                        return NotFound();
+                    }
+                    familyMemberRsvp.Status=item.FamilyMembers[0].Status;
+                    familyMemberRsvp.UpdateDate  = DateTime.UtcNow;
+                    familyMemberRsvp.KidsCount = item.KidsCount;
+                    _context.RsvpItems.Update(familyMemberRsvp);
 
+            }
             _context.RsvpItems.Update(rsvp);
             _context.SaveChanges();
             return new NoContentResult();

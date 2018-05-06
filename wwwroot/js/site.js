@@ -2,8 +2,11 @@
 	
 
     var updateMainView = function (model) {
-        //set guest name
-        $("#guestName").html(model.guestName);
+		//set guest name
+		var helloDisplay = model.familyMemberName == "" ? model.guestName : model.guestName + " and " +model.familyMemberName;
+		$("#helloDisplay").html(helloDisplay);
+
+
         
         //enable buttons
         $('#openChangeRSVPDialogButton').prop("disabled",false);			
@@ -62,13 +65,33 @@
 				alert ("Please select Yes or No, then click save RSVP.");
 				return; 
 			}
-						
+			
+			//unknown, YesPlusOne, No, BothYes, GuestYesOnly, FamilyMemberYesOnly
+			var familyMembers = null;
+			var familyMemberStatus = rsvpStatus=="BothYes" || rsvpStatus == "FamilyMemberYesOnly"? "Yes" : 
+									rsvpStatus=="No" || rsvpStatus=="GuestYesOnly"? "No" :
+									"error"; //this should never be saved
+
+			var status = rsvpStatus=="BothYes" || rsvpStatus == "GuestYesOnly"? "Yes" : 
+				rsvpStatus=="No" || rsvpStatus == "FamilyMemberYesOnly"? "No" :
+				rsvpStatus; //rsvpStatus=="Unknown" || rsvpStatus=="YesPlusOne"?
+
+			var familyMembers  = model.familyMemberID == "" ? null :
+			familyMembers = [
+					{
+						id: model.familyMemberID,
+						status: familyMemberStatus,
+						name: model.familyMemberName
+					}
+				];
+
 			var dto = {
-				status: rsvpStatus,					
+				status: status,					
 				plusOneName:  $("#plusOneName").val(),
 				kidsCount: $("#numberOfKids").val(), 
-				guestName: model.guestName,
-				id: model.guestID
+				name: model.guestName,
+				id: model.guestID,
+				familyMembers: familyMembers
 			}
 
 			services.saveRSVP(dto, guestID, function(){

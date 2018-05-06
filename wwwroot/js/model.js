@@ -1,12 +1,17 @@
 var model = {
-    guestID : "",
+
     guestName : "",
-    rsvpStatus : "", //unknown, Yes, YesPlusOne, No
+    rsvpStatus : "", //unknown, YesPlusOne, No, BothYes, GuestYesOnly, FamilyMemberYesOnly
     numberOfKids : 0,
     plusOneName : "",
+    guestID : "",
+    familyMemberID : "",
+    familyMemberName : "",
+    familyMemberRSVPStatus : "",
+    
     getNumberOfKidsDescription: function() {
         var numberOfKidsDescription = "~~";
-        if (this.rsvpStatus == "Yes" || this.rsvpStatus == "YesPlusOne")
+        if (this.rsvpStatus != "Unkown" && this.rsvpStatus != "No")
         {
             if (this.numberOfKids == 1) {
                 numberOfKidsDescription = "You are bringing ONE kid.";
@@ -39,9 +44,16 @@ var model = {
         var rsvpStatusDescription = "~~";		
         switch(this.rsvpStatus) 
         {
-            case "Yes": 
+            //unknown, YesPlusOne, No, BothYes, GuestYesOnly, FamilyMemberYesOnly
+            case "BothYes": 
             case "YesPlusOne": 
                 rsvpStatusDescription= 'Hurray! You have said YES. ';
+                break;
+            case "GuestYesOnly": 
+                rsvpStatusDescription= this.familyMemberName==""?'Hurray! You have said YES. ':this.guestName + " is coming, but " + this.familyMemberName + " cannot make it.";
+                break;
+            case "FamilyMemberYesOnly": 
+                rsvpStatusDescription= this.familyMemberName + " is coming, but " + this.guestName + " cannot make it.";
                 break;
             case "No": 
                 rsvpStatusDescription= 'Boooo.... You are not coming! :(';
@@ -56,9 +68,40 @@ var model = {
     },
     initFromDto: function(dto){
         this.guestID = dto.id;
-        this.rsvpStatus = dto.status;
         this.plusOneName = dto.plusOneName;
         this.numberOfKids = dto.kidsCount;
-        this.guestName = dto.name;			
+        this.guestName = dto.name;
+        if (dto.familyMembers != null) {
+            this.familyMemberID = dto.familyMembers[0].id;
+            this.familyMemberName = dto.familyMembers[0].name
+        }
+
+        switch (dto.status)
+		{	
+			case "Yes": 
+                if (dto.familyMembers != null) {
+                    this.rsvpStatus = (dto.familyMembers[0].status=="Yes") ? "BothYes" : "GuestYesOnly";
+                }
+                else {
+                    this.rsvpStatus = "GuestYesOnly";
+                }
+                break;
+            case "No": 
+                if (dto.familyMembers != null) {
+                    this.rsvpStatus = (dto.familyMembers[0].status=="Yes") ? "FamilyMemberYesOnly" : "No";
+                } 
+                else {
+                    this.rsvpStatus = dto.status;
+                }
+				break;                
+			case "YesPlusOne": 
+                this.rsvpStatus = dto.status; 
+                break;
+            case "Unknown": 
+                this.rsvpStatus = dto.status; 
+                break;
+            default:
+                utils.handleError("Something went wrong. RSVP status: (" + dto.status + ") is not recognized. Please call us.");
+        }
     }
 }
