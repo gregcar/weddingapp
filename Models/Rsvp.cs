@@ -10,10 +10,13 @@ namespace WeddingApp.Models
     public class Rsvp {
         private List<Rsvp> _familyMembers = null;
 
+        [Required]
+        public Guid Id {get;set;}
+
         [Key]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id {get;set;}
+        public int InternalId {get;set;}
 
         [Required]
         public string Name {get;set;}
@@ -41,7 +44,11 @@ namespace WeddingApp.Models
         public int KidsCount {get;set;}
 
         public DateTime InsertDate {get; set;}
+        
         public DateTime UpdateDate {get; set;}
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
         [NotMapped]
         public bool Attending 

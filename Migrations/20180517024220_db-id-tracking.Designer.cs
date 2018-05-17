@@ -11,9 +11,10 @@ using WeddingApp.Models;
 namespace WeddingApp.Migrations
 {
     [DbContext(typeof(RsvpContext))]
-    partial class RsvpContextModelSnapshot : ModelSnapshot
+    [Migration("20180517024220_db-id-tracking")]
+    partial class dbidtracking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
