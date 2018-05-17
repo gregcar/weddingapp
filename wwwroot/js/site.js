@@ -1,5 +1,5 @@
 ﻿$(document).ready(function(){
-	
+	$.LoadingOverlay("show");
 
     var updateMainView = function (model) {
 		//set guest name
@@ -34,6 +34,7 @@
 			rsvpResponseBox.addClass("bg-success");
 		}
 		$('#main-body-container').show();
+		$.LoadingOverlay("hide");
         
         //initialize dialog
         rsvpDialog.initFromModel(model);
