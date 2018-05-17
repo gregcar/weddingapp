@@ -62,7 +62,7 @@ var model = {
                 rsvpStatusDescription='Not responded yet!! Seriously! Are you coming?';
                 break;
             default:
-                utils.handleError("unexpected RSVP value " + this.rsvpStatus, "Something is wrong please email us.");			
+                utils.handleError("Unexpected RSVP value " + this.rsvpStatus, "Something is wrong please email us.");			
         }
         return rsvpStatusDescription;
     },
@@ -101,7 +101,7 @@ var model = {
                 this.rsvpStatus = dto.status; 
                 break;
             default:
-                utils.handleError("Something went wrong. RSVP status: (" + dto.status + ") is not recognized. Please call us.");
+                utils.handleError("Something went wrong. RSVP status: (" + dto.status + ") is not recognized. Please email us.");
         }
     }
 }
