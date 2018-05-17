@@ -49,6 +49,7 @@
 		var guestID = utils.getParameterByName("c", null);
 		if (guestID == null || guestID == "")
 			{
+				$.LoadingOverlay("hide");
 				utils.handleError("Error loading the page.", "Please try clicking the link from the email we sent you.");
 				return;
 			}
