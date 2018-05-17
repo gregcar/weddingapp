@@ -39,7 +39,7 @@ var rsvpDialog = function() {
 			$("#numberOfKids").prop( "disabled", true );
 			$("#numberOfKids").val("0");
 		}
-		else if (value == "Yes") {
+		else if (value == "GuestYesOnly") {
 			$("#numberOfKids").prop( "disabled", false );
 
 			$("#plusOneName" ).prop( "disabled", true );
