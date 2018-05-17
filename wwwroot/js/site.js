@@ -33,6 +33,7 @@
 			rsvpResponseBox.removeClass("bg-warning");
 			rsvpResponseBox.addClass("bg-success");
 		}
+		$('#main-body-container').show();
         
         //initialize dialog
         rsvpDialog.initFromModel(model);
